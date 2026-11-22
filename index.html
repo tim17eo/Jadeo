@@ -17,12 +17,24 @@ main{padding:22px 0 70px}.section-head{display:flex;align-items:end;justify-cont
 footer{background:#203e30;color:#e9f0e7;padding:30px 0;font-size:13px}.foot{display:flex;justify-content:space-between;gap:15px;align-items:center}.foot strong{font-size:20px}
 .modal{position:fixed;inset:0;background:#1022199c;display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal.show{display:flex}.dialog{background:white;width:min(760px,100%);max-height:90vh;overflow:auto;border-radius:24px;position:relative}.close{position:absolute;right:15px;top:15px;border:0;background:#ffffffed;width:38px;height:38px;border-radius:50%;font-size:21px;z-index:2;color:var(--green)}.detail-img{height:280px;background:var(--mint)}.detail-img img{width:100%;height:100%;object-fit:cover}.detail-body{padding:25px 28px 30px}.detail-body h2{margin:5px 0;color:var(--green);font-size:30px}.detail-body .latin{font-size:14px}.description{color:var(--muted);line-height:1.7;margin:17px 0 22px}.care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.care{background:var(--cream);padding:15px;border-radius:15px}.care span{display:block;font-size:20px;margin-bottom:8px}.care small{display:block;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}.care b{display:block;color:var(--green);font-size:14px;margin-top:5px}
 @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:30px}.hero-art{height:260px}.grid{grid-template-columns:repeat(2,1fr)}.nav{gap:12px}}@media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}header{padding:16px 0}.nav{display:none}.hero{gap:25px}.hero h1{letter-spacing:-2px}.hero-art{height:220px}.grid{grid-template-columns:1fr;gap:15px}.plant-photo{height:220px}.section-head h2{font-size:25px}.care-grid{grid-template-columns:1fr}.foot{flex-direction:column;align-items:flex-start}.detail-img{height:210px}.detail-body{padding:20px}}
-.advice-section{padding:54px 0 62px;border-top:1px solid var(--line)}.advice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}.advice-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.advice-icon{font-size:28px}.advice-card h3{color:var(--green);margin:12px 0 8px;font-size:17px}.advice-card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}.advice-tip{margin-top:18px;padding:18px 20px;background:var(--mint);border-radius:16px;color:var(--green);line-height:1.6;font-size:14px}@media(max-width:800px){.advice-grid{grid-template-columns:1fr}}</style>
+.advice-section{padding:54px 0 62px;border-top:1px solid var(--line)}.advice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}.advice-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.advice-icon{font-size:28px}.advice-card h3{color:var(--green);margin:12px 0 8px;font-size:17px}.advice-card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}.advice-tip{margin-top:18px;padding:18px 20px;background:var(--mint);border-radius:16px;color:var(--green);line-height:1.6;font-size:14px}@media(max-width:800px){.advice-grid{grid-template-columns:1fr}}
+.account-btn{border:0;background:var(--green);color:#fff;padding:11px 16px;border-radius:12px;font-weight:750;font-size:13px}
+.auth-overlay{position:fixed;inset:0;background:#102219a8;display:none;align-items:center;justify-content:center;padding:18px;z-index:30}
+.auth-overlay.show{display:flex}.auth-box{width:min(430px,100%);background:#fff;border-radius:24px;padding:28px;position:relative;box-shadow:var(--shadow)}
+.auth-box h2{color:var(--green);margin:0 0 8px;font-size:27px}.auth-box p{color:var(--muted);font-size:14px;line-height:1.55}
+.auth-box label{display:block;color:var(--green);font-size:13px;font-weight:750;margin:15px 0 7px}
+.auth-box input{width:100%;padding:13px;border:1px solid var(--line);border-radius:11px;outline-color:var(--green)}
+.auth-actions{display:grid;gap:10px;margin-top:19px}.auth-actions button{padding:13px;border:0;border-radius:12px;font-weight:750}
+.auth-submit{background:var(--green);color:#fff}.auth-switch{background:var(--mint);color:var(--green)}
+.auth-close{position:absolute;right:14px;top:12px;border:0;background:transparent;color:var(--green);font-size:25px}
+.auth-message{font-size:13px!important;margin-top:13px;min-height:18px}.auth-user{font-size:13px;color:var(--green);font-weight:700;margin-top:12px}
+@media(max-width:560px){.account-btn{padding:9px 11px;font-size:12px}}
+</style>
 </head>
 <body>
 <header class="wrap">
  <div class="brand"><div class="brandmark">✿</div>Jadéo</div>
- <nav class="nav"><a href="#plantes">Les plantes</a><a href="#conseils">Conseils</a></nav>
+ <nav class="nav"><a href="#plantes">Les plantes</a><a href="#conseils">Conseils</a></nav><button class="account-btn" id="accountBtn">👤 Mon compte</button>
 </header>
 <section class="hero wrap">
  <div>
@@ -47,7 +59,25 @@ footer{background:#203e30;color:#e9f0e7;padding:30px 0;font-size:13px}.foot{disp
 <section class="advice-section wrap" id="conseils"><div class="eyebrow">Les bons gestes</div><div class="section-head"><div><h2>Les conseils de Jadéo</h2><div class="count">Quelques règles simples pour garder tes plantes en forme.</div></div></div><div class="advice-grid"><article class="advice-card"><div class="advice-icon">💧</div><h3>Arrose au bon moment</h3><p>Vérifie la terre avec ton doigt avant d’arroser. Beaucoup de plantes préfèrent que la surface sèche légèrement entre deux arrosages.</p></article><article class="advice-card"><div class="advice-icon">☀️</div><h3>Choisis la bonne lumière</h3><p>Place chaque plante selon ses besoins. Une lumière indirecte près d’une fenêtre convient à de nombreuses plantes d’intérieur.</p></article><article class="advice-card"><div class="advice-icon">🪴</div><h3>Évite l’eau stagnante</h3><p>Utilise un pot percé ou vide la soucoupe après l’arrosage. Les racines n’aiment généralement pas rester dans l’eau.</p></article></div><div class="advice-tip"><b>🌿 Le conseil à retenir :</b> chaque plante est différente. Ouvre sa fiche dans le catalogue pour consulter ses indications d’arrosage, de lumière et de température.</div></section>
 <footer id="pied"><div class="wrap foot"><strong>Jadéo ✿</strong><span>Un peu de verdure, beaucoup de bonheur.</span><span>© 2026 Jadéo — Le guide des plantes</span></div></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Fiche de plante"><div class="dialog"><button class="close" id="close" aria-label="Fermer">×</button><div id="detail"></div></div></div>
+
+<div class="auth-overlay" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+ <div class="auth-box">
+  <button class="auth-close" id="authClose" aria-label="Fermer">×</button>
+  <div class="eyebrow">Bienvenue sur Jadéo</div><h2 id="authTitle">Créer un compte</h2>
+  <p id="authIntro">Inscris-toi pour retrouver ton espace personnel sur Jadéo.</p>
+  <form id="authForm">
+   <label for="authEmail">Adresse e-mail</label><input id="authEmail" type="email" autocomplete="email" required placeholder="exemple@email.com">
+   <label for="authPassword">Mot de passe</label><input id="authPassword" type="password" autocomplete="new-password" minlength="6" required placeholder="6 caractères minimum">
+   <div class="auth-actions"><button class="auth-submit" id="authSubmit" type="submit">Créer mon compte</button><button class="auth-switch" id="authSwitch" type="button">J’ai déjà un compte · Me connecter</button></div>
+  </form>
+  <p class="auth-message" id="authMessage" aria-live="polite"></p><div class="auth-user" id="authUser"></div>
+ </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+const SUPABASE_URL="https://vuboioabdjraryjbrtbp.supabase.co";
+const SUPABASE_KEY="sb_publishable_hNaCQaJipSKtVjDYtNMl6w_J6F7ib8Y";
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 const plants=[
 {id:1,name:"Monstera deliciosa",common:"Monstera",latin:"Monstera deliciosa",cat:"Intérieur",water:"1 fois par semaine",light:"Lumière indirecte",temp:"18 à 27 °C",desc:"Avec ses grandes feuilles découpées, le Monstera apporte une touche tropicale à la maison. Laisse sécher légèrement la surface du terreau entre deux arrosages.",img:"https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=900&q=85"},
 {id:2,name:"Lavande",common:"Lavande",latin:"Lavandula angustifolia",cat:"Extérieur",water:"Modéré, sol sec",light:"Plein soleil",temp:"15 à 30 °C",desc:"La lavande est appréciée pour ses fleurs violettes et son parfum. Elle aime le soleil et un sol bien drainé. Évite de trop l'arroser.",img:"https://images.unsplash.com/photo-1499002238440-d264edd596ec?auto=format&fit=crop&w=900&q=85"},
@@ -141,6 +171,39 @@ search.addEventListener('input',()=>{clearTimeout(requestTimer);const q=search.v
 document.getElementById('searchBtn').addEventListener('click',runSearch);search.addEventListener('keydown',e=>{if(e.key==='Enter'){clearTimeout(requestTimer);runSearch();}});
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button[data-cat]');if(!b)return;category=b.dataset.cat;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render();});
 document.getElementById('loadWorld').addEventListener('click',()=>{if(!worldMode)fetchWorld(search.value.trim(),false);else if(worldHasMore)fetchWorld(search.value.trim(),true);else if(search.value.trim())fetchWorld(search.value.trim(),false);});
-document.getElementById('close').addEventListener('click',closeModal);document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});render();</script>
+document.getElementById('close').addEventListener('click',closeModal);document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+let authMode='signup',currentUser=null;
+const authOverlay=document.getElementById('authOverlay'),authForm=document.getElementById('authForm');
+function authMessage(message,isError=false){const el=document.getElementById('authMessage');el.textContent=message;el.style.color=isError?'#b42318':'var(--green)';}
+function updateAuthUI(){
+ const btn=document.getElementById('accountBtn'),title=document.getElementById('authTitle'),intro=document.getElementById('authIntro'),submit=document.getElementById('authSubmit'),switchBtn=document.getElementById('authSwitch'),user=document.getElementById('authUser');
+ if(currentUser){btn.textContent='👤 Mon espace';title.textContent='Mon espace Jadéo';intro.textContent='Ton compte est connecté.';submit.textContent='Me déconnecter';switchBtn.style.display='none';document.getElementById('authEmail').value=currentUser.email||'';document.getElementById('authEmail').disabled=true;document.getElementById('authPassword').style.display='none';document.querySelector('label[for="authPassword"]').style.display='none';user.textContent=currentUser.email||'';}
+ else{btn.textContent='👤 Mon compte';setAuthMode(authMode);document.getElementById('authEmail').disabled=false;document.getElementById('authPassword').style.display='block';document.querySelector('label[for="authPassword"]').style.display='block';user.textContent='';}
+}
+function setAuthMode(mode){authMode=mode;document.getElementById('authTitle').textContent=mode==='signup'?'Créer un compte':'Se connecter';document.getElementById('authIntro').textContent=mode==='signup'?'Inscris-toi pour retrouver ton espace personnel sur Jadéo.':'Connecte-toi pour retrouver ton espace Jadéo.';document.getElementById('authSubmit').textContent=mode==='signup'?'Créer mon compte':'Me connecter';document.getElementById('authSwitch').textContent=mode==='signup'?'J’ai déjà un compte · Me connecter':'Pas encore de compte · M’inscrire';document.getElementById('authPassword').autocomplete=mode==='signup'?'new-password':'current-password';authMessage('');}
+document.getElementById('accountBtn').addEventListener('click',()=>{authOverlay.classList.add('show');authMessage('');});
+document.getElementById('authClose').addEventListener('click',()=>authOverlay.classList.remove('show'));
+authOverlay.addEventListener('click',e=>{if(e.target===authOverlay)authOverlay.classList.remove('show');});
+document.getElementById('authSwitch').addEventListener('click',()=>setAuthMode(authMode==='signup'?'login':'signup'));
+authForm.addEventListener('submit',async e=>{
+ e.preventDefault();const submit=document.getElementById('authSubmit');submit.disabled=true;
+ try{
+  if(currentUser){const {error}=await supabaseClient.auth.signOut();if(error)throw error;currentUser=null;authMessage('Tu es bien déconnecté.');updateAuthUI();return;}
+  const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;
+  if(authMode==='signup'){
+   const {data,error}=await supabaseClient.auth.signUp({email,password});if(error)throw error;
+   if(data.session){currentUser=data.user;authMessage('Ton compte est créé et tu es connecté.');}
+   else{authMessage('Inscription enregistrée ! Vérifie ta boîte mail pour confirmer ton adresse, puis connecte-toi.');}
+  }else{
+   const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});if(error)throw error;currentUser=data.user;authMessage('Connexion réussie !');
+  }
+  updateAuthUI();
+ }catch(error){authMessage(error.message||'Une erreur est survenue. Réessaie.',true);}
+ finally{submit.disabled=false;}
+});
+supabaseClient.auth.getSession().then(({data})=>{currentUser=data.session?.user||null;updateAuthUI();});
+supabaseClient.auth.onAuthStateChange((_event,session)=>{currentUser=session?.user||null;updateAuthUI();});
+
+render();</script>
 </body>
 </html>
